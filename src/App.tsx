@@ -1,18 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logo-mark.png";
 import { Check, X, Star, Play, ArrowRight, Shield, Zap, Target, TrendingUp } from "lucide-react";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Clinic Booked — 20-50 New Patients Monthly, Pay On Results" },
-      { name: "description", content: "We help medspas and aesthetic clinics add $60K+ in 90 days with high-ticket patient acquisition. Pay-on-results. Limited to 1 clinic per area." },
-      { property: "og:title", content: "Clinic Booked — 20-50 New Patients Monthly" },
-      { property: "og:description", content: "High-ticket patient acquisition for medspas. Pay-on-results. 1 clinic per area." },
-    ],
-  }),
-  component: Index,
-});
 
 const CAL_URL = "https://cal.com/escalatedigital/30min";
 
@@ -30,13 +17,9 @@ function Nav() {
           <a href="#testimonials" className="hover:text-foreground transition">Testimonials</a>
           <a href="#reviews" className="hover:text-foreground transition">Reviews</a>
         </nav>
-        <a
-          href={CAL_URL}
-          target="_blank"
-          rel="noreferrer"
+        <a href={CAL_URL} target="_blank" rel="noreferrer"
           className="relative inline-flex items-center rounded-full px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:scale-105"
-          style={{ background: "var(--gradient-brand)" }}
-        >
+          style={{ background: "var(--gradient-brand)" }}>
           Book a Call
         </a>
       </div>
@@ -48,10 +31,8 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-40 pb-32">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[600px] w-[1200px] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
-          style={{ background: "var(--gradient-brand)" }} />
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute left-1/2 top-0 h-[600px] w-[1200px] -translate-x-1/2 rounded-full opacity-30 blur-3xl" style={{ background: "var(--gradient-brand)" }} />
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
       </div>
       <div className="mx-auto max-w-5xl px-6 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs font-medium tracking-wide text-primary backdrop-blur">
@@ -59,25 +40,14 @@ function Hero() {
           LIMITED TO 1 CLINIC PER LOCAL AREA
         </div>
         <h1 className="mt-8 text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-          Get{" "}
-          <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
-            20–50 New Patients
-          </span>{" "}
-          Every Month Without Discount Hunters On A Pay-On-Results Basis
+          Get <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>20–50 New Patients</span> Every Month Without Discount Hunters On A Pay-On-Results Basis
         </h1>
         <p className="mt-8 text-lg md:text-xl text-muted-foreground">
           Our average medspa adds <span className="text-foreground font-semibold">$60,000+</span> in less than 90 days
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={CAL_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:scale-105"
-            style={{ background: "var(--gradient-brand)" }}
-          >
-            See If You Qualify
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+          <a href={CAL_URL} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:scale-105" style={{ background: "var(--gradient-brand)" }}>
+            See If You Qualify <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
           </a>
           <a href="#process" className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-7 py-4 text-base font-semibold backdrop-blur transition hover:bg-card">
             <Play className="h-4 w-4" /> Watch How It Works
@@ -212,7 +182,6 @@ function Process() {
 }
 
 function Testimonials() {
-  // Placeholders — user will provide video links later
   const videos = [
     { title: "How Susan added $20K in 30 Days", sub: "Medspa Owner — Texas" },
     { title: "Dana booked 68 new patients in 30 days", sub: "Aesthetic Clinic — Florida" },
@@ -407,7 +376,7 @@ function Footer() {
   );
 }
 
-function Index() {
+export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Nav />
